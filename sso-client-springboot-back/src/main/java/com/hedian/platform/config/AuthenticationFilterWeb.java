@@ -133,6 +133,8 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 		String origin = request.getHeader("Origin");
 		//获取前端的地址 存入 context 中
 		String referer = request.getHeader("Referer");
+		System.out.println(origin);
+		System.out.println(referer);
 		//配置允许跨域
 		response.setHeader("Access-control-Allow-Origin", request.getHeader("Origin"));
 		response.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS,PUT,DELETE");

@@ -16,6 +16,29 @@
 
 #### 前后端分离项目
 
-先看下流程图
+##### 流程图讲解
 
-在看下地址栏访问  ajax访问 跨域ajax访问请求头的差别
+![img](images/2.png)
+
+##### 各类访问的请求头
+
+`重点 后续过滤器中需要通过 origin 和 referer 来判断是放行还是重定向`
+
+- 三种访问的请求头差别
+- 后台打印
+
+![img](images/6.png)
+
+- 地址栏访问  
+
+  ![img](images/3.png)
+
+- ajax访问 
+
+  ![img](images/4.png)
+
+- 跨域ajax访问
+
+  ![img](images/5.png)
+
+#### 代码配置
