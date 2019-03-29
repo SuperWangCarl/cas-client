@@ -131,6 +131,8 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 		final HttpServletResponse response = (HttpServletResponse) servletResponse;
 		//获取前端的地址 存入 context 中
 		String origin = request.getHeader("Origin");
+		//获取前端的地址 存入 context 中
+		String referer = request.getHeader("Referer");
 		//配置允许跨域
 		response.setHeader("Access-control-Allow-Origin", request.getHeader("Origin"));
 		response.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS,PUT,DELETE");
@@ -152,8 +154,12 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 		final Assertion assertion = session != null ? (Assertion) session.getAttribute(CONST_CAS_ASSERTION) : null;
 
 		if (assertion != null) {
+			//此时登录成功有三种情况
+			//第一种是sso服务端通过service判定返回的 是直接从地址栏重定向返回的 因为直接从地址栏访问 origin,refere都为null  需要重定向到前台地址
+			//第二种是前后端分离的情况下(前后端的域名和端口相同) 前端通过ajax查询的 此时携带 Origin为null refere有值 需要返回请求数据
+			//第二种是前后端分离的情况下(前后端的域名和端口不相同) 前端通过ajax查询的 此时携带 orgin refere均有值 需要返回请求数据
 			//此时获取不到 Origin地址表示是从地址栏直接访问的 进行重定向到 前台
-			if (origin == null) {
+			if (origin == null && referer == null) {
 				response.sendRedirect(CasConfig.clientWebUrl);
 				return;
 			}
