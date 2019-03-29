@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+   
+    <script src="jquery.min.js"></script>
+    
+</head>
+
+<body>
+
+<script type="application/javascript">
+    $(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://www.clientback.com:8014/user/gettoken",
+            dataType: "json",
+			//需要配置 withCredentials = true
+			xhrFields: {withCredentials: true},
+            success: function(data){
+				console.log(JSON.stringify(data));
+				if(data.urlToRedirectTo){
+				window.location.href=data.urlToRedirectTo
+				}
+				
+            }
+        });
+    });
+    
+</script>
+</body>
+</html>
