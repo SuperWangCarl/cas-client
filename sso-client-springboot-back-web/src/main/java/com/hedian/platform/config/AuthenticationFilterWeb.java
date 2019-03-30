@@ -157,6 +157,15 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 			String referer = request.getHeader("Referer");
 			//非首次登录获取验证的ticket
 			String ticket = request.getParameter("ticket");
+			System.out.println("-------------------------------------------");
+			System.out.println(request.getSession().getId());
+			System.out.println(origin);
+			System.out.println(referer);
+			System.out.println(request.getParameter("ticket"));
+			System.out.println(response.getStatus());
+			//System.out.println(request.getco);
+			//http://www.sso.com:8443/cas/login?service=http%3A%2F%2Fwww.clientback.com%3A8014%2Fuser%2Fgettoken
+			//http://www.clientweb.com:8080/
 			//此时登录成功有三种情况
 			//第一种是sso服务端通过service判定返回的 是直接从地址栏重定向返回的 因为直接从地址栏访问 origin,refere有值(302重定向后,并不会刷新referer)  需要重定向到前台地址
 			//第二种是前后端分离的情况下(前后端的域名和端口相同) 前端通过ajax查询的 此时携带 Origin为null refere有值 需要返回请求数据
@@ -164,13 +173,18 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 			//此时获取不到 Origin地址表示是从地址栏直接访问的 进行重定向到 前台
 
 			//存在一种情况 多重重定向后 获取的referer还是重定向前的 所以无法依赖referer来判断请求是来自地址栏还是ajax(前后端分离 域名端口号相同情况下)
-			//所以此方案仅仅可以适用与 前后端分离域名端口不同的情况 通过origin来判断
-			//当前后端分离域名端口相同的情况下 此时无法通过origin来判断 我们需要通过响应码来判断 之后重写验证器重定向 详见另外一个项目 sso-client-springboot-back-web
-			if (origin == null && ticket == null) {
+			if (origin == null  && referer == null && ticket == null) {
 				response.sendRedirect(CasConfig.clientWebUrl);
 				return;
 			}
 			filterChain.doFilter(request, response);
+			/*if(response.getStatus() == 302){
+				System.out.println(response.getClass());
+				ResponseFacade response1 = (ResponseFacade) response;
+				response1.reset();
+
+				response.sendRedirect(CasConfig.clientWebUrl);
+			}*/
 			return;
 		}
 
