@@ -159,9 +159,9 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 			String ticket = request.getParameter("ticket");
 			//此时登录成功有三种情况
 			//第一种是sso服务端通过service判定返回的 是直接从地址栏重定向返回的 因为直接从地址栏访问 origin,refere有值(302重定向后,并不会刷新referer)  需要重定向到前台地址
-			//第二种是前后端分离的情况下(前后端的域名和端口相同) 前端通过ajax查询的 此时携带 Origin为null refere有值 需要返回请求数据
+			//第二种是前后端分离的情况下(前后端的域名和端口相同) 前端通过ajax查询的 此时携带 Origin为null refere有值 需要返回请求数据  此处未实现
 			//第二种是前后端分离的情况下(前后端的域名和端口不相同) 前端通过ajax查询的 此时携带 orgin refere均有值 需要返回请求数据
-			//此时获取不到 Origin地址表示是从地址栏直接访问的 进行重定向到 前台
+			//在跨域的情况下 获取不到 Origin地址表示是从地址栏直接访问的 进行重定向到 前台
 
 			//存在一种情况 多重重定向后 获取的referer还是重定向前的 所以无法依赖referer来判断请求是来自地址栏还是ajax(前后端分离 域名端口号相同情况下)
 			//所以此方案仅仅可以适用与 前后端分离域名端口不同的情况 通过origin来判断

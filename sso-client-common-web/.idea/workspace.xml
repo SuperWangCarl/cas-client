@@ -7,6 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3708cec9-ec69-4a9c-a08e-bc744d28645c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/Cas20ProxyReceivingTicketValidationOverFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/Cas30ProxyReceivingTicketValidationOverFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/AbstractTicketValidationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/AbstractTicketValidationOverFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/AuthenticationFilterWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/AuthenticationFilterWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/Cas30ProxyReceivingTicketValidationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/ServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/ServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back/src/main/java/com/hedian/platform/config/AuthenticationFilterWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sso-client-springboot-back/src/main/java/com/hedian/platform/config/AuthenticationFilterWeb.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -299,6 +306,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

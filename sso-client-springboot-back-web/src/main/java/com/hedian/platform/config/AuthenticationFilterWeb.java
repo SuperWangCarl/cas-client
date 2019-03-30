@@ -173,18 +173,17 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 			//此时获取不到 Origin地址表示是从地址栏直接访问的 进行重定向到 前台
 
 			//存在一种情况 多重重定向后 获取的referer还是重定向前的 所以无法依赖referer来判断请求是来自地址栏还是ajax(前后端分离 域名端口号相同情况下)
-			if (origin == null  && referer == null && ticket == null) {
+			if (origin == null && referer == null && ticket == null) {
 				response.sendRedirect(CasConfig.clientWebUrl);
 				return;
 			}
 			filterChain.doFilter(request, response);
-			/*if(response.getStatus() == 302){
-				System.out.println(response.getClass());
-				ResponseFacade response1 = (ResponseFacade) response;
-				response1.reset();
-
+			//因为在前后端分离的情况下 端口域名相同的话 无法通过origin来判断时候重定向到前端地址 所以要通过ticket来判断重定向
+			//官方原版客户端 在验证完ticket之后 会重定向到 不带ticket的地址 即我们的后端
+			//在前后端分离的情况下 我们要避免浏览器直接访问我们的后端,所以在此处通过ticket来判断 在验证完之后将 浏览器重定向到我们的前端地址
+			if (ticket != null) {
 				response.sendRedirect(CasConfig.clientWebUrl);
-			}*/
+			}
 			return;
 		}
 

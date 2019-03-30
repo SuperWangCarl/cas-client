@@ -4,7 +4,6 @@ import com.hedian.platform.bean.CasConfig;
 import org.jasig.cas.client.session.SingleSignOutFilter;
 import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
 import org.jasig.cas.client.util.HttpServletRequestWrapperFilter;
-import org.jasig.cas.client.validation.Cas30ProxyReceivingTicketValidationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
@@ -72,7 +71,7 @@ public class ServerConfig {
 	@Bean
 	public FilterRegistrationBean filterValidationRegistration() {
 		FilterRegistrationBean registration = new FilterRegistrationBean();
-		registration.setFilter(new Cas30ProxyReceivingTicketValidationFilter());
+		registration.setFilter(new Cas30ProxyReceivingTicketValidationOverFilter());
 		// 设定匹配的路径
 		registration.addUrlPatterns("/*");
 		Map<String,String>  initParameters = new HashMap<String, String>();

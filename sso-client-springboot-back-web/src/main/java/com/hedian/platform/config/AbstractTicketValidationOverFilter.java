@@ -57,7 +57,7 @@ import java.util.Properties;
  * @version $Revision$ $Date$
  * @since 3.1
  */
-public abstract class AbstractTicketValidationFilter extends AbstractCasFilter {
+public abstract class AbstractTicketValidationOverFilter extends AbstractCasFilter {
 
     /** The TicketValidator we will use to validate tickets. */
     private TicketValidator ticketValidator;
@@ -78,7 +78,7 @@ public abstract class AbstractTicketValidationFilter extends AbstractCasFilter {
      */
     private boolean useSession = true;
 
-    protected AbstractTicketValidationFilter(final Protocol protocol) {
+    protected AbstractTicketValidationOverFilter(final Protocol protocol) {
         super(protocol);
     }
 
@@ -222,7 +222,7 @@ public abstract class AbstractTicketValidationFilter extends AbstractCasFilter {
 
                 if (this.redirectAfterValidation) {
                     logger.debug("Redirecting after successful ticket validation.");
-                    response.sendRedirect(constructServiceUrl(request, response));
+                    //response.sendRedirect(constructServiceUrl(request, response));
                     return;
                 }
             } catch (final TicketValidationException e) {
