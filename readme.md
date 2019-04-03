@@ -4,6 +4,8 @@
 
 ![img](images/1.png)
 
+![img](images/7.png)
+
 本文着重讲解前后端分离情况下的CAS客户端案例
 
 ### 客户端集成SSO(登录)

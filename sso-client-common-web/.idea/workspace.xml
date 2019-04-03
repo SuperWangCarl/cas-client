@@ -7,14 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3708cec9-ec69-4a9c-a08e-bc744d28645c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/Cas20ProxyReceivingTicketValidationOverFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/Cas30ProxyReceivingTicketValidationOverFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/AbstractTicketValidationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/AbstractTicketValidationOverFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/AuthenticationFilterWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/AuthenticationFilterWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/Cas30ProxyReceivingTicketValidationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/ServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/java/com/hedian/platform/config/ServerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../sso-client-springboot-back-web/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sso-client-springboot-back/src/main/java/com/hedian/platform/config/AuthenticationFilterWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sso-client-springboot-back/src/main/java/com/hedian/platform/config/AuthenticationFilterWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readme.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,10 +27,10 @@
     <session id="956823223">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -71,7 +64,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="-504">
               <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
             </state>
           </provider>
@@ -142,7 +135,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -176,14 +169,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sso-client-springboot-back" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -298,17 +291,18 @@
       <updated>1553828638885</updated>
       <workItem from="1553828640846" duration="2859000" />
       <workItem from="1553907713272" duration="596000" />
+      <workItem from="1554254039456" duration="937000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3455000" />
+    <option name="totallyTimeSpent" value="4392000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -317,7 +311,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -347,7 +341,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="-504">
           <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
         </state>
       </provider>
