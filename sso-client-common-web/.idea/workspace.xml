@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3708cec9-ec69-4a9c-a08e-bc744d28645c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/artifacts/sso_client_common_web_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/sso_client_common_web_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3708cec9-ec69-4a9c-a08e-bc744d28645c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,23 +57,23 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="303119756">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/out/artifacts/sso_client_common_web_war_exploded/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="755">
-              <caret line="85" column="21" lean-forward="true" selection-start-line="5" selection-end-line="85" selection-end-column="21" />
+            <state relative-caret-position="574">
+              <caret line="41" column="29" selection-end-line="92" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -109,9 +106,9 @@
   <component name="GradleLocalSettings">
     <option name="projectSyncType">
       <map>
-        <entry key="E:/WorkSpace/IDEA/x1hn1k" value="PREVIEW" />
-        <entry key="E:/WorkSpace/IDEA/x1hn1k/blog-auth" value="PREVIEW" />
-        <entry key="E:/WorkSpace/IDEA/x1hn1k/blog-blog" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../IDEA/x1hn1k" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../IDEA/x1hn1k/blog-auth" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../IDEA/x1hn1k/blog-blog" value="PREVIEW" />
       </map>
     </option>
   </component>
@@ -158,7 +155,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -170,39 +167,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="sso-client-common-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="sso-client-common-web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sso-client-common-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso-client-common-web" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sso-client-common-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso-client-common-web" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sso-client-common-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso-client-common-web" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="sso_client_common_web_war_exploded" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sso-client-common-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sso-client-common-web" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="sso_client_common_web_war_exploded" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sso-client-common-web" type="b2602c69:ProjectViewProjectNode" />
@@ -230,13 +201,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sso-client-springboot-back" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sso-client-maven-web" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -358,17 +329,18 @@
       <workItem from="1554949232267" duration="4797000" />
       <workItem from="1554982445660" duration="990000" />
       <workItem from="1555030127121" duration="1304000" />
+      <workItem from="1555052325959" duration="790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15379000" />
+    <option name="totallyTimeSpent" value="16169000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2683706" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27103302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -406,10 +378,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/out/artifacts/sso_client_common_web_war_exploded/WEB-INF/web.xml" />
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        <state relative-caret-position="574">
+          <caret line="41" column="29" selection-end-line="92" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -417,13 +390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/sso_client_common_web_war_exploded/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="85" column="21" lean-forward="true" selection-start-line="5" selection-end-line="85" selection-end-column="21" />
         </state>
       </provider>
     </entry>
