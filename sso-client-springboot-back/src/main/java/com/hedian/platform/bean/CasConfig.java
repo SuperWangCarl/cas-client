@@ -1,5 +1,6 @@
 package com.hedian.platform.bean;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
  * @Vsersion: 0.0.1
  */
 @Component
+@Data
 @ConfigurationProperties(prefix = "cas")
 public class CasConfig {
 	private String serverUrlPrefix;
@@ -18,35 +20,4 @@ public class CasConfig {
 	private String clientHostUrl;
 	public static String clientWebUrl;
 
-	public String getServerUrlPrefix() {
-		return serverUrlPrefix;
-	}
-
-	public void setServerUrlPrefix(String serverUrlPrefix) {
-		this.serverUrlPrefix = serverUrlPrefix;
-	}
-
-	public String getServerLoginUrl() {
-		return serverLoginUrl;
-	}
-
-	public void setServerLoginUrl(String serverLoginUrl) {
-		this.serverLoginUrl = serverLoginUrl;
-	}
-
-	public String getClientHostUrl() {
-		return clientHostUrl;
-	}
-
-	public void setClientHostUrl(String clientHostUrl) {
-		this.clientHostUrl = clientHostUrl;
-	}
-
-	public String getClientWebUrl() {
-		return clientWebUrl;
-	}
-
-	public void setClientWebUrl(String clientWebUrl) {
-		this.clientWebUrl = clientWebUrl;
-	}
 }

@@ -2,9 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
-   
+
     <script src="jquery.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     $(function () {
         $.ajax({
             type: "GET",
-            url: "http://www.clientback.com:8014/user/gettoken",
+            url: "http://127.0.0.1:8014/user/gettoken",
             dataType: "json",
 			//需要配置 withCredentials = true
 			xhrFields: {withCredentials: true},
@@ -22,11 +22,11 @@
 				if(data.urlToRedirectTo){
 				window.location.href=data.urlToRedirectTo
 				}
-				
+
             }
         });
     });
-    
+
 </script>
 </body>
 </html>

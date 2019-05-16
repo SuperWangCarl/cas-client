@@ -25,8 +25,9 @@ import java.util.Map;
 public class ServerConfig {
 	@Autowired
 	CasConfig casConfig;
+
 	@Bean
-	public ServletListenerRegistrationBean singleSignOutListenerRegistration(){
+	public ServletListenerRegistrationBean singleSignOutListenerRegistration() {
 		ServletListenerRegistrationBean registrationBean = new ServletListenerRegistrationBean();
 		registrationBean.setListener(new SingleSignOutHttpSessionListener());
 		registrationBean.setOrder(1);
@@ -39,24 +40,29 @@ public class ServerConfig {
 		registration.setFilter(new SingleSignOutFilter());
 		// 设定匹配的路径
 		registration.addUrlPatterns("/*");
-		Map<String,String> initParameters = new HashMap<String, String>();
+		Map<String, String> initParameters = new HashMap<String, String>();
 		initParameters.put("casServerUrlPrefix", casConfig.getServerUrlPrefix());
 		registration.setInitParameters(initParameters);
 		// 设定加载的顺序
 		registration.setOrder(1);
 		return registration;
 	}
+
+	@Autowired
+	private AuthenticationFilterWeb authenticationFilterWeb;
+
 	/**
 	 * 授权过滤器
+	 *
 	 * @return
 	 */
 	@Bean
 	public FilterRegistrationBean filterAuthenticationRegistration() {
 		FilterRegistrationBean registration = new FilterRegistrationBean();
-		registration.setFilter(new AuthenticationFilterWeb());
+		registration.setFilter(authenticationFilterWeb);
 		// 设定匹配的路径
 		registration.addUrlPatterns("/*");
-		Map<String,String>  initParameters = new HashMap<String, String>();
+		Map<String, String> initParameters = new HashMap<String, String>();
 		initParameters.put("casServerLoginUrl", casConfig.getServerLoginUrl());
 		initParameters.put("serverName", casConfig.getClientHostUrl());
 
@@ -65,8 +71,10 @@ public class ServerConfig {
 		registration.setOrder(2);
 		return registration;
 	}
+
 	/**
 	 * 过滤验证器
+	 *
 	 * @return
 	 */
 	@Bean
@@ -75,7 +83,7 @@ public class ServerConfig {
 		registration.setFilter(new Cas30ProxyReceivingTicketValidationFilter());
 		// 设定匹配的路径
 		registration.addUrlPatterns("/*");
-		Map<String,String>  initParameters = new HashMap<String, String>();
+		Map<String, String> initParameters = new HashMap<String, String>();
 		initParameters.put("casServerUrlPrefix", casConfig.getServerUrlPrefix());
 		initParameters.put("serverName", casConfig.getClientHostUrl());
 		initParameters.put("useSession", "true");
@@ -89,6 +97,7 @@ public class ServerConfig {
 
 	/**
 	 * wraper过滤器
+	 *
 	 * @return
 	 */
 	@Bean

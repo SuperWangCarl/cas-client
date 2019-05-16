@@ -2,6 +2,7 @@ package com.hedian.platform.config;
 
 import com.hedian.platform.bean.CasConfig;
 import com.hedian.platform.utils.JsonUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.jasig.cas.client.Protocol;
 import org.jasig.cas.client.authentication.AuthenticationRedirectStrategy;
 import org.jasig.cas.client.authentication.ContainsPatternUrlPatternMatcherStrategy;
@@ -16,7 +17,9 @@ import org.jasig.cas.client.util.AbstractCasFilter;
 import org.jasig.cas.client.util.CommonUtils;
 import org.jasig.cas.client.util.ReflectUtils;
 import org.jasig.cas.client.validation.Assertion;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.FilterChain;
@@ -29,8 +32,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @ClassName: AuthenticationFilterWeb
@@ -39,6 +45,7 @@ import java.util.Map;
  * @Date: 2019/3/28 15:07
  * @Vsersion: 0.0.1
  */
+@Component
 public class AuthenticationFilterWeb extends AbstractCasFilter {
 	/**
 	 * The URL to the CAS Server login.
@@ -60,7 +67,9 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 	private AuthenticationRedirectStrategy authenticationRedirectStrategy = new DefaultAuthenticationRedirectStrategy();
 
 	private UrlPatternMatcherStrategy ignoreUrlPatternMatcherStrategyClass = null;
-
+	@Autowired
+	private CasConfig casConfig;
+	private static Map<String, String> urlMap = new HashMap<>();
 	private static final Map<String, Class<? extends UrlPatternMatcherStrategy>> PATTERN_MATCHER_TYPES =
 			new HashMap<String, Class<? extends UrlPatternMatcherStrategy>>();
 
@@ -147,6 +156,14 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 			return;
 		}
 
+		//这些链接无需认证 用户接口 企业信息接口 日志回调接口 下载 上传 swagger
+		String[] noAuth = {"iface_user", "..."};
+		String requestURI = request.getRequestURI();
+		List<String> collect = Arrays.stream(noAuth).filter(s -> requestURI.contains(s)).collect(Collectors.toList());
+		if (collect.size() != 0) {
+			filterChain.doFilter(request, response);
+			return;
+		}
 		final HttpSession session = request.getSession(false);
 		final Assertion assertion = session != null ? (Assertion) session.getAttribute(CONST_CAS_ASSERTION) : null;
 
@@ -166,8 +183,17 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 			//存在一种情况 多重重定向后 获取的referer还是重定向前的 所以无法依赖referer来判断请求是来自地址栏还是ajax(前后端分离 域名端口号相同情况下)
 			//所以此方案仅仅可以适用与 前后端分离域名端口不同的情况 通过origin来判断
 			//当前后端分离域名端口相同的情况下 此时无法通过origin来判断 我们需要通过响应码来判断 之后重写验证器重定向 详见另外一个项目 sso-client-springboot-back-web
+
+
 			if (origin == null && ticket == null) {
-				response.sendRedirect(CasConfig.clientWebUrl);
+				//登录的用户名
+				String remoteUser = request.getRemoteUser();
+
+				if (StringUtils.isNotBlank(urlMap.get("Referer")) && urlMap.get("Referer").contains(casConfig.getClientWebUrl())) {
+					response.sendRedirect(urlMap.get("Referer") + "?user=" + remoteUser);
+				} else {
+					response.sendRedirect(casConfig.getClientWebUrl() + "?user=" + remoteUser );
+				}
 				return;
 			}
 			filterChain.doFilter(request, response);
@@ -201,6 +227,14 @@ public class AuthenticationFilterWeb extends AbstractCasFilter {
 		logger.debug("redirecting to \"{}\"", urlToRedirectTo);
 
 		//this.authenticationRedirectStrategy.redirect(request, response, urlToRedirectTo);
+
+		//认证成功后重定向到该链接
+		String refer = request.getHeader("Referer");
+		//去除?后面的数据
+		if (refer != null && refer.indexOf("?") != -1) {
+			refer = refer.substring(0, refer.indexOf("?"));
+		}
+		urlMap.put("Referer", refer);
 
 		//返回给前端 url 让前端重定向都该地址
 		response.setContentType("application/json; charset=utf-8");

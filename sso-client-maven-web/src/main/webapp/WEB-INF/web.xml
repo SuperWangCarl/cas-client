@@ -8,7 +8,7 @@
         <init-param>
             <param-name>casServerUrlPrefix</param-name>
             <!-- SSO 服务端地址 http://ip:port/cas -->
-            <param-value>http://www.sso.com:8443/cas</param-value>
+            <param-value>http://106.14.224.216:8072/cas</param-value>
         </init-param>
     </filter>
 
@@ -22,12 +22,12 @@
         <init-param>
             <param-name>casServerLoginUrl</param-name>
             <!-- SSO 服务端登录地址 http://ip:port/cas/login -->
-            <param-value>http://www.sso.com:8443/cas/login</param-value>
+            <param-value>http://106.14.224.216:8072/cas/login</param-value>
         </init-param>
         <init-param>
             <param-name>serverName</param-name>
-            <!-- SSO 客户端地址 -->
-            <param-value>http://www.mavenweb.com:8012</param-value>
+            <!-- SSO 客户端地址 如果是企业端添加参数 flag=company 如 http://127.0.0.1:8012?flag=company,如果是政府端则不需要-->
+            <param-value>http://127.0.0.1:8012</param-value>
         </init-param>
     </filter>
 
@@ -37,12 +37,12 @@
         <init-param>
             <param-name>casServerUrlPrefix</param-name>
             <!-- SSO 服务端地址 http://ip:port/cas -->
-            <param-value>http://www.sso.com:8443/cas</param-value>
+            <param-value>http://106.14.224.216:8072/cas</param-value>
         </init-param>
         <init-param>
             <param-name>serverName</param-name>
-            <!-- SSO 客户端地址 -->
-            <param-value>http://www.mavenweb.com:8012</param-value>
+            <!-- SSO 客户端地址 如果是企业端添加参数 flag=company 如 http://127.0.0.1:8012?flag=company,如果是政府端则不需要-->
+            <param-value>http://127.0.0.1:8012</param-value>
         </init-param>
         <init-param>
             <param-name>redirectAfterValidation</param-name>
